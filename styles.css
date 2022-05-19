@@ -1,0 +1,279 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  overflow-x: hidden;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Nunito Sans", sans-serif;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+:root {
+  --_primary-clr: hwb(240 7% 69%);
+  --secondary-clr: hwb(240 18% 48%);
+  --tertiary-clr: hwb(240 74% 13% / 0.356);
+  --neutral-clr: hwb(0 59% 41%);
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: min(87%, 70rem);
+  margin-inline: auto;
+  margin-block: 4rem;
+  padding: 10px;
+}
+
+main,
+footer {
+  width: min(87%, 70rem);
+  margin-inline: auto;
+}
+.text-section .learnmore-earlyaccess {
+  background: var(--secondary-clr);
+  color: white;
+  width: min(85%, 25rem);
+  margin-inline: auto;
+  text-align: center;
+  padding: 0.4rem;
+  border-radius: 50px;
+  margin-block-end: 1rem;
+}
+.learnMore {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.learnMore:hover {
+  text-decoration: none;
+}
+.community-building h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--_primary-clr);
+  max-width: 550px;
+  margin-block-end: 1rem;
+
+  margin-inline: auto;
+}
+.community-building p {
+  text-align: center;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+.mail-collection-waitlist button {
+  width: 100%;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  background: var(--secondary-clr);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover,
+button:focus {
+  background: var(--_primary-clr);
+  outline: none;
+}
+.mail-collection-waitlist input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid rgba(141, 140, 140, 0.288);
+  margin-bottom: 10px;
+}
+.mail-collection-waitlist input[type="text"]:focus {
+  outline: none;
+  border: 1px solid rgb(141, 140, 140);
+}
+::placeholder {
+  opacity: 0.2;
+}
+.mail-collection-waitlist {
+  margin-top: 2rem;
+}
+.img-section {
+  display: none;
+}
+footer {
+  margin-block: 2rem;
+}
+.company-used_footer {
+  margin-block-start: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.cover {
+  position: absolute;
+  background: rgba(0, 0, 255, 0.08);
+  inset: 1rem 1rem -6rem;
+  border-radius: 5px;
+  isolation: isolate;
+  z-index: -1;
+}
+
+@media (min-width: 450px) {
+  .mail-collection-waitlist {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  .mail-collection-waitlist button {
+    max-width: 150px;
+  }
+  .mail-collection-waitlist input[type="text"] {
+    max-width: 350px;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 800px) {
+  nav ul {
+    position: absolute;
+    background: var(--_primary-clr);
+    height: 80vh;
+    width: 60%;
+    color: white;
+    top: 7rem;
+    list-style: none;
+    padding: 0;
+    right: 0.5rem;
+    transition: 500ms ease;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  ul li {
+    cursor: pointer;
+  }
+  ul button {
+    border: none;
+    padding: 0.6rem 1.2rem;
+    background: var(--secondary-clr);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  ul button:hover {
+    background: rgb(6, 6, 32);
+  }
+  nav img {
+    cursor: pointer;
+  }
+}
+@media (min-width: 800px) {
+  nav {
+    width: 28rem;
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+  }
+  ul li {
+    font-size: 1.05rem;
+  }
+  nav img {
+    display: none;
+  }
+  ul button {
+    border: none;
+    padding: 0.6rem 1.2rem;
+    background: var(--secondary-clr);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  main {
+    display: flex;
+    justify-content: space-between;
+  }
+  .text-section {
+    width: 65%;
+  }
+  .img-section {
+    width: 30%;
+    display: block;
+  }
+  .text-section .learnmore-earlyaccess {
+    margin-inline: 0;
+    text-align: center;
+  }
+  .community-building h1 {
+    text-align: left;
+    margin-inline: 0;
+  }
+  .community-building p {
+    text-align: left;
+  }
+  .mail-collection-waitlist {
+    justify-content: start;
+  }
+}
+.show-face {
+  /* transform: translateX(0%); */
+  right: -30rem;
+}
